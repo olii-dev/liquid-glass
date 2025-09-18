@@ -1,0 +1,32 @@
+# Development files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Runtime files
+.cache/
+dist/
+build/
+
+# Temporary files
+tmp/
+temp/
+
+# Node modules (if any future dependencies are added)
+node_modules/
+
+# Screenshots and media
+screenshots/
+*.png
+*.jpg
+*.gif
+!screenshot.png
