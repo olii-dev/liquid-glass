@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid Glass - Interactive Experience</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-container">
+        <div class="animated-blob blob-1"></div>
+        <div class="animated-blob blob-2"></div>
+        <div class="animated-blob blob-3"></div>
+    </div>
+
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span>Liquid Glass</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#components" class="nav-link">Components</a></li>
+                <li><a href="#effects" class="nav-link">Effects</a></li>
+                <li><a href="#experiment" class="nav-link">Experiment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section id="home" class="hero-section">
+            <div class="glass-container hero-glass">
+                <h1 class="hero-title">Experience Liquid Glass</h1>
+                <p class="hero-subtitle">Interact with Apple-inspired glassmorphism effects</p>
+                <button class="glass-button primary" onclick="openModal()">Start Exploring</button>
+            </div>
+        </section>
+
+        <section id="components" class="components-section">
+            <h2 class="section-title">Interactive Components</h2>
+            <div class="components-grid">
+                <div class="glass-card" data-tilt>
+                    <div class="card-icon">💧</div>
+                    <h3>Liquid Cards</h3>
+                    <p>Hover to see the liquid glass effect in action</p>
+                    <button class="glass-button small">Interact</button>
+                </div>
+                
+                <div class="glass-card" data-tilt>
+                    <div class="card-icon">✨</div>
+                    <h3>Glass Morphism</h3>
+                    <p>Experience the beauty of transparent materials</p>
+                    <button class="glass-button small">Explore</button>
+                </div>
+                
+                <div class="glass-card" data-tilt>
+                    <div class="card-icon">🌊</div>
+                    <h3>Fluid Motion</h3>
+                    <p>Smooth animations that feel natural and alive</p>
+                    <button class="glass-button small">Animate</button>
+                </div>
+                
+                <div class="glass-card" data-tilt>
+                    <div class="card-icon">🎨</div>
+                    <h3>Color Blend</h3>
+                    <p>Dynamic color mixing through glass surfaces</p>
+                    <button class="glass-button small">Blend</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="effects" class="effects-section">
+            <h2 class="section-title">Glass Effects Playground</h2>
+            <div class="effects-container">
+                <div class="effect-control glass-panel">
+                    <h3>Customize Effects</h3>
+                    <div class="control-group">
+                        <label for="blur-range">Blur Intensity</label>
+                        <input type="range" id="blur-range" min="5" max="25" value="15" onchange="updateBlur(this.value)">
+                    </div>
+                    <div class="control-group">
+                        <label for="opacity-range">Glass Opacity</label>
+                        <input type="range" id="opacity-range" min="0.1" max="0.4" step="0.05" value="0.25" onchange="updateOpacity(this.value)">
+                    </div>
+                    <div class="control-group">
+                        <label for="saturation-range">Saturation</label>
+                        <input type="range" id="saturation-range" min="100" max="200" value="150" onchange="updateSaturation(this.value)">
+                    </div>
+                    <button class="glass-button" onclick="resetEffects()">Reset</button>
+                </div>
+                
+                <div class="glass-showcase" id="showcase">
+                    <div class="showcase-item">
+                        <div class="glass-element sample-1">Sample 1</div>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="glass-element sample-2">Sample 2</div>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="glass-element sample-3">Sample 3</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiment" class="experiment-section">
+            <h2 class="section-title">Interactive Experiments</h2>
+            <div class="experiment-grid">
+                <div class="experiment-item floating-glass" onclick="createRipple(event)">
+                    <h3>Click Ripple Effect</h3>
+                    <p>Click anywhere on this glass surface</p>
+                </div>
+                
+                <div class="experiment-item morphing-glass">
+                    <h3>Morphing Shapes</h3>
+                    <p>Watch the glass transform</p>
+                    <div class="morph-shape"></div>
+                </div>
+                
+                <div class="experiment-item particle-glass">
+                    <h3>Particle System</h3>
+                    <p>Interactive particle effects</p>
+                    <canvas id="particle-canvas" width="300" height="200"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Glass Modal -->
+    <div id="glass-modal" class="modal-overlay">
+        <div class="glass-modal">
+            <div class="modal-header">
+                <h2>Welcome to Liquid Glass</h2>
+                <button class="close-button" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-content">
+                <p>This interactive playground showcases the beauty of glassmorphism design. Explore different components, experiment with effects, and experience the fluid nature of liquid glass.</p>
+                <div class="modal-actions">
+                    <button class="glass-button" onclick="closeModal()">Start Exploring</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
