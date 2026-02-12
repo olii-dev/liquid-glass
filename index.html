@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liquid Glass - Interactive Experience</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="background-container">
         <div class="animated-blob blob-1"></div>
@@ -39,28 +41,30 @@
         <section id="components" class="components-section">
             <h2 class="section-title">Interactive Components</h2>
             <div class="components-grid">
-                <div class="glass-card" data-tilt>
+                <div class="glass-card card-liquid" data-tilt>
                     <div class="card-icon">💧</div>
                     <h3>Liquid Cards</h3>
                     <p>Hover to see the liquid glass effect in action</p>
                     <button class="glass-button small">Interact</button>
+                    <div class="liquid-overlay"></div>
                 </div>
-                
-                <div class="glass-card" data-tilt>
+
+                <div class="glass-card card-morphism" data-tilt>
                     <div class="card-icon">✨</div>
                     <h3>Glass Morphism</h3>
                     <p>Experience the beauty of transparent materials</p>
                     <button class="glass-button small">Explore</button>
+                    <div class="shimmer-overlay"></div>
                 </div>
-                
-                <div class="glass-card" data-tilt>
+
+                <div class="glass-card card-fluid" data-tilt>
                     <div class="card-icon">🌊</div>
                     <h3>Fluid Motion</h3>
                     <p>Smooth animations that feel natural and alive</p>
                     <button class="glass-button small">Animate</button>
                 </div>
-                
-                <div class="glass-card" data-tilt>
+
+                <div class="glass-card card-blend" data-tilt>
                     <div class="card-icon">🎨</div>
                     <h3>Color Blend</h3>
                     <p>Dynamic color mixing through glass surfaces</p>
@@ -76,19 +80,22 @@
                     <h3>Customize Effects</h3>
                     <div class="control-group">
                         <label for="blur-range">Blur Intensity</label>
-                        <input type="range" id="blur-range" min="5" max="25" value="15" onchange="updateBlur(this.value)">
+                        <input type="range" id="blur-range" min="5" max="25" value="15"
+                            onchange="updateBlur(this.value)">
                     </div>
                     <div class="control-group">
                         <label for="opacity-range">Glass Opacity</label>
-                        <input type="range" id="opacity-range" min="0.1" max="0.4" step="0.05" value="0.25" onchange="updateOpacity(this.value)">
+                        <input type="range" id="opacity-range" min="0.1" max="0.4" step="0.05" value="0.25"
+                            onchange="updateOpacity(this.value)">
                     </div>
                     <div class="control-group">
                         <label for="saturation-range">Saturation</label>
-                        <input type="range" id="saturation-range" min="100" max="200" value="150" onchange="updateSaturation(this.value)">
+                        <input type="range" id="saturation-range" min="100" max="200" value="150"
+                            onchange="updateSaturation(this.value)">
                     </div>
                     <button class="glass-button" onclick="resetEffects()">Reset</button>
                 </div>
-                
+
                 <div class="glass-showcase" id="showcase">
                     <div class="showcase-item">
                         <div class="glass-element sample-1">Sample 1</div>
@@ -110,17 +117,43 @@
                     <h3>Click Ripple Effect</h3>
                     <p>Click anywhere on this glass surface</p>
                 </div>
-                
+
                 <div class="experiment-item morphing-glass">
                     <h3>Morphing Shapes</h3>
                     <p>Watch the glass transform</p>
                     <div class="morph-shape"></div>
                 </div>
-                
+
                 <div class="experiment-item particle-glass">
                     <h3>Particle System</h3>
-                    <p>Interactive particle effects</p>
-                    <canvas id="particle-canvas" width="300" height="200"></canvas>
+                    <p>Interactive fluid particles</p>
+                    <canvas id="particle-canvas"></canvas>
+                </div>
+
+                <div class="experiment-item magnetic-box">
+                    <h3>Magnetic Button</h3>
+                    <p>Lerp-based cursor pull</p>
+                    <div class="magnetic-wrap">
+                        <button class="glass-button magnetic-item">Snap</button>
+                    </div>
+                </div>
+
+                <div class="experiment-item lens-playground">
+                    <h3>Refraction Lens</h3>
+                    <p>Drag the glass lens</p>
+                    <div class="lens-container">
+                        <div class="lens-target">Refract</div>
+                        <div class="glass-lens" id="draggable-lens"></div>
+                    </div>
+                </div>
+
+                <div class="experiment-item frosted-window">
+                    <h3>Grain Clearing</h3>
+                    <p>Wipe to clear the frost</p>
+                    <div class="frost-canvas-wrap">
+                        <canvas id="frost-canvas"></canvas>
+                        <div class="frost-reveal">Reveal</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -134,7 +167,8 @@
                 <button class="close-button" onclick="closeModal()">&times;</button>
             </div>
             <div class="modal-content">
-                <p>This interactive playground showcases the beauty of glassmorphism design. Explore different components, experiment with effects, and experience the fluid nature of liquid glass.</p>
+                <p>This interactive playground showcases the beauty of glassmorphism design. Explore different
+                    components, experiment with effects, and experience the fluid nature of liquid glass.</p>
                 <div class="modal-actions">
                     <button class="glass-button" onclick="closeModal()">Start Exploring</button>
                 </div>
@@ -144,4 +178,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
